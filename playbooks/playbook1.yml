@@ -1,0 +1,12 @@
+---
+- name: creating dir and copying files
+  hosts: all
+  tasks:
+    - name: create dir
+      file:
+       name: /tmp/dir1
+       state: directory
+    - name: copy the /etc/password file
+      copy:
+        src: /etc/passwd
+        dest: /tmp/dir1         

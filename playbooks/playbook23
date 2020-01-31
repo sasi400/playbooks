@@ -1,0 +1,10 @@
+- name: creating directory
+  hosts: 172.31.21.26
+  tasks:
+  - name: creating file
+    file:
+     name: "{{a}}"
+     state: "{{b}}"
+     owner: "{{c}}"
+     group: "{{d}}"
+     

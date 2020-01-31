@@ -1,0 +1,8 @@
+- name: install tomcat8
+  hosts: webserver
+  tasks:
+   - name: tomcat install
+     apt:
+      name: "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}" 

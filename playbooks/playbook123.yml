@@ -1,0 +1,21 @@
+---
+- name: tags in ansible
+  hosts: all
+  tasks:
+   - name: install tree
+     apt:
+      name: tree
+      state: present
+     tags:
+      tree-installation
+   - name: creatting users
+     user:
+      name: sunny
+      password: sunny
+     tags:
+      user-creation
+   - name: copying files
+     copy: 
+      src: /etc/passwd
+      dest: /tmp
+...

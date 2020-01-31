@@ -1,0 +1,13 @@
+---
+-name: install git and clone a remote repository
+ host: all
+ tasks:
+-name: install git
+ apt:
+  name: git
+  state: present
+  update-cache: yes
+-name: clone a remote git repo
+ git: 
+  repo: https://github.com:/intelliqtraining/kubernetes-demo.git
+  dest: /home/ubuntu/kubernetes

@@ -1,0 +1,7 @@
+- name: create files
+  hosts: 172.31.21.26
+  tasks: 
+   - name: create file
+     file: 
+      name: "{{a}}"
+      state: "{{b}}"

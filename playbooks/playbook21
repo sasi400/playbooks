@@ -1,0 +1,13 @@
+- name: installing softwares
+  hosts: all    
+  vars:
+   - a: tomcat
+   - b: present
+   - c: yes
+  tasks:
+   - name: install
+     apt:
+      name: "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}"
+  

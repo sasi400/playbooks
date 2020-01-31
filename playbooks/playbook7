@@ -1,0 +1,8 @@
+- name: install git
+  hosts: webserver
+  tasks:
+    - name: install git 
+      apt:
+       name: git
+       state: present
+      

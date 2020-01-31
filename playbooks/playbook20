@@ -1,0 +1,9 @@
+- name: installing softwares
+  hosts: all
+  tasks: 
+  - name: install tomcat
+    apt:
+     name: "{{a}}"
+     state: "{{b}}"
+     update_cache: "{{c}}" 
+     

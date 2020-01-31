@@ -1,0 +1,4 @@
+- name: installing tomcat
+  apt:
+   name: tomcat
+   state: present   

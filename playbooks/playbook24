@@ -1,0 +1,13 @@
+- name: installing software
+  hosts: all
+  tasks: 
+   - name: install software
+     apt:
+      name: "{{items}}"
+      state: present
+      update_cache: no
+     with_items: 
+      - tree
+      - apache
+      - tomcat8 
+        

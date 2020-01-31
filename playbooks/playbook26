@@ -1,0 +1,20 @@
+- name: implementing tags
+  hosts: all
+  tasks: 
+   - name: install tree
+     apt: 
+      name: tree
+      state: present
+     tags:
+       tree-instalation
+   - name: create user
+     user:
+      name: sasi
+      password: 123
+     tags:
+       user-creation 
+   - name: copy the password file
+     copy:
+      src: /etc/passwd
+      dest: /tmp
+  

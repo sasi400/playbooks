@@ -1,0 +1,29 @@
+- name: installing tomcat8,copy,replace,restart and uri
+  hosts: all
+  tasks:
+  - name: installing tomcat
+    apt:
+     name: tomcat8
+     state: present
+     update_cache: no
+  - name: copy
+    copy: 
+     src: /tmp/file1
+     dest: /tmp/
+  - name:
+    replace:
+     regexp: 8080
+     replace: 9090
+     path: etc/password/
+  - name: restart the server
+    restart:
+     name: tomcat
+     state: restart
+  - name: check url response of server1
+    uri:
+     url: 172.31.21.26
+     status_code:200
+  - name: che url is responds of server2
+    uri:
+     url: 172.31.22.188
+     status_code: 200    

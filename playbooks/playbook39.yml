@@ -1,0 +1,36 @@
+- name: install required software on the server
+  hosts: all
+  tasks: 
+   - name: install softwares
+     apt:
+      name: "{{item}}" 
+      state: present
+     with_items:
+      - openjdk-8-jdk
+      - git
+      - maven
+      - tomcat8
+      - tomcat8-admin
+   - name: continuous download
+     git:
+      repo: https://github.com/intelliqittrainings/maven.git
+      dest: /home/ubuntu/mycode
+   - name: continuous build
+     shell: cd /home/ubuntu/mycode;mvn package   
+   - name: fetch the artifact from devserver to controller
+     fetch:
+      src: /home/ubuntu/mycode/webapp/target/webapp.war
+      dest: /home/ubuntu
+- name: deploy the artifact into qaserver and do automtion testing
+  hosts: qaserver
+  tasks: 
+   - name: deployment
+     copy:
+      src: /home/ubutu/172.31.22.188/home/ubuntu/mycode/webapp/target/webapp.war        
+      dest: /var/lib/tomcat8/webapp/testapp.war    
+   - name: download the selenium test script
+     git:
+      repo: https://github.com/intelliqittrainings/FunctionalTesting.git
+      dest: /home/ubuntu/testcode
+   - name: execute the script
+     shell: java -jar/home/ubuntu/testcode/testing.war      

@@ -1,0 +1,9 @@
+- name: instaling java using host varibles
+  hosts: webserver
+  tasks: 
+   - name: install java
+     apt: 
+      name: "{{a}}"
+      state: "{{b}}"
+      update_cache: "{{c}}"    
+        

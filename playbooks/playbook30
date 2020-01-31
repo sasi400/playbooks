@@ -1,0 +1,12 @@
+- name: implementing conditional statement(when)
+  hosts: all
+  vars:
+   - a: 20
+  tasks:
+   - name: implementing when condition 
+     apt:
+      name: tomcat
+      state: present
+     when:
+      a == 20
+   

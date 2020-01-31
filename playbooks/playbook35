@@ -1,0 +1,6 @@
+- name: calling child playbooks for installing java
+  hosts: all
+  tasks:
+   - name: calling child playbook
+     include: playbook34
+ 

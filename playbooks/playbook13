@@ -1,0 +1,11 @@
+- name: installing,uninstalling software applications
+  hosts: all
+  tasks:
+   - name: install software
+     apt: 
+      name: "{{items.a}}"
+      state: "{{items.b}}"
+      update_cache: "{{items.c}}"
+     with_items: 
+      - {a: tomcat8,b: present,c: no} 
+      - {a: apache,b: absent,c: no}   
