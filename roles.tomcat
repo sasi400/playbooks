@@ -1,26 +1,4 @@
-Skip to content
-Search or jump to…
 
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@sasi400 
-Learn Git and GitHub without any code!
-Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
-
-
-intelliqittrainings
-/
-Ansible_playbooks
-1
-00
- Code Issues 0 Pull requests 0 Actions Projects 0 Wiki Security Insights
-Ansible_playbooks/roles/tomcat.txt
-@intelliqittrainings intelliqittrainings d
-35fc4d1 16 hours ago
-181 lines (105 sloc)  2.28 KB
   
 Creating roles for tomcat
 
@@ -203,15 +181,3 @@ port2: 9090
   ansible-playbook configure_tomcat.yml -b
 
 
-© 2020 GitHub, Inc.
-Terms
-Privacy
-Security
-Status
-Help
-Contact GitHub
-Pricing
-API
-Training
-Blog
-About
